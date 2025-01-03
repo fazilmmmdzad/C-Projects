@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6148DF2-B3D9-431B-A75D-B79D58C9D569}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Magaza.UI</RootNamespace>
+    <AssemblyName>Seven Checkout</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>WhatsApp-Image-2024-12-14-at-12.18.42.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.3.4\lib\net46\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlXml" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaForm.Designer.cs">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AyarlarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AyarlarForm.Designer.cs">
+      <DependentUpon>AyarlarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GirisEkranlari\GirisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisEkranlari\GirisForm.Designer.cs">
+      <DependentUpon>GirisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagazaSistemiDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MagazaSistemiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Melumatlar\HesabMelumatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Melumatlar\HesabMelumatForm.Designer.cs">
+      <DependentUpon>HesabMelumatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Magaza.Base\TryCatch.cs" />
+    <Compile Include="Magaza.Core\BLL.cs" />
+    <Compile Include="Magaza.Core\DAL.cs" />
+    <Compile Include="Magaza.Entities\Borclar.cs" />
+    <Compile Include="Magaza.Entities\Isci.cs" />
+    <Compile Include="Magaza.Entities\Istifadeci.cs" />
+    <Compile Include="Magaza.Entities\Kategoriya.cs" />
+    <Compile Include="Magaza.Entities\Mehsul.cs" />
+    <Compile Include="Magaza.Entities\Musteri.cs" />
+    <Compile Include="Magaza.Entities\Satis.cs" />
+    <Compile Include="UserControlsAyarlar\Isciler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Isciler.Designer.cs">
+      <DependentUpon>Isciler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Istifadeciler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Istifadeciler.Designer.cs">
+      <DependentUpon>Istifadeciler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Musteriler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Musteriler.Designer.cs">
+      <DependentUpon>Musteriler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsAnaForm\Kassa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsAnaForm\Kassa.Designer.cs">
+      <DependentUpon>Kassa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsAnaForm\MedaxilBorclar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsAnaForm\MedaxilBorclar.Designer.cs">
+      <DependentUpon>MedaxilBorclar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsAnaForm\MexaricBorclar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsAnaForm\MexaricBorclar.Designer.cs">
+      <DependentUpon>MexaricBorclar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Melumatlar\ProgramMelumat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Melumatlar\ProgramMelumat.Designer.cs">
+      <DependentUpon>ProgramMelumat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GirisEkranlari\YeniHesabForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisEkranlari\YeniHesabForm.Designer.cs">
+      <DependentUpon>YeniHesabForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Kategoriyalar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Kategoriyalar.Designer.cs">
+      <DependentUpon>Kategoriyalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Mehsullar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Mehsullar.Designer.cs">
+      <DependentUpon>Mehsullar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Satislar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsAyarlar\Satislar.Designer.cs">
+      <DependentUpon>Satislar.cs</DependentUpon>
+    </Compile>
+    <Content Include="WhatsApp-Image-2024-12-14-at-12.18.42.ico" />
+    <None Include="Resources\WhatsApp Image 2024-12-14 at 12.08.062.jpeg" />
+    <None Include="Resources\WhatsApp Image 2024-12-14 at 12.08.061.jpeg" />
+    <None Include="Resources\WhatsApp Image 2024-12-14 at 12.08.06.jpeg" />
+    <None Include="Resources\WhatsApp Image 2024-12-14 at 12.07.10.jpeg" />
+    <None Include="Resources\WhatsApp Image 2024-12-14 at 12.05.24.jpeg" />
+    <None Include="Resources\setting %282%29.png" />
+    <None Include="Resources\setting1.png" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\copy %281%29.png" />
+    <None Include="Resources\casino %284%29.png" />
+    <None Include="Resources\casino %281%29.png" />
+    <None Include="Resources\casino.png" />
+    <None Include="Resources\casino %282%29.png" />
+    <None Include="Resources\copy.png" />
+    <EmbeddedResource Include="UserControlsAyarlar\Istifadeciler.resx">
+      <DependentUpon>Istifadeciler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsAyarlar\Satislar.resx">
+      <DependentUpon>Satislar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\image.png" />
+    <EmbeddedResource Include="UserControlsAyarlar\Isciler.resx">
+      <DependentUpon>Isciler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsAyarlar\Musteriler.resx">
+      <DependentUpon>Musteriler.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\categories %281%291.png" />
+    <None Include="Resources\categories %281%29.png" />
+    <None Include="Resources\categories.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\list %281%291.png" />
+    <None Include="Resources\list1.png" />
+    <None Include="Resources\choice %281%29.png" />
+    <None Include="Resources\choice.png" />
+    <EmbeddedResource Include="UserControlsAyarlar\Kategoriyalar.resx">
+      <DependentUpon>Kategoriyalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsAyarlar\Mehsullar.resx">
+      <DependentUpon>Mehsullar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\people %281%29.png" />
+    <None Include="Resources\people1.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\stop-button %283%29.png" />
+    <None Include="Resources\stop-button %282%29.png" />
+    <None Include="Resources\stop-button %281%29.png" />
+    <None Include="Resources\stop-button.png" />
+    <None Include="MagazaSistemiDataSet.xsc">
+      <DependentUpon>MagazaSistemiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MagazaSistemiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MagazaSistemiDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MagazaSistemiDataSet.xss">
+      <DependentUpon>MagazaSistemiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\cart %281%29.png" />
+    <None Include="Resources\cart.png" />
+    <None Include="Resources\list %281%29.png" />
+    <None Include="Resources\list %282%29.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\magnifier %281%29.png" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\add %281%29.png" />
+    <None Include="Resources\add1.png" />
+    <None Include="Resources\right-arrow %281%29.png" />
+    <None Include="Resources\broom %281%29.png" />
+    <None Include="Resources\broom.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\delete %281%29.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\employee.png" />
+    <None Include="Resources\management.png" />
+    <None Include="Resources\acquisition.png" />
+    <None Include="Resources\people.png" />
+    <None Include="Resources\category.png" />
+    <None Include="Resources\open-box.png" />
+    <None Include="Resources\arrow.png" />
+    <None Include="Resources\arrow %281%29.png" />
+    <None Include="Resources\settings 256.png" />
+    <None Include="Resources\power-off.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\purchase %281%29.png" />
+    <None Include="Resources\purchase.png" />
+    <None Include="Resources\borrow %281%29.png" />
+    <None Include="Resources\borrow.png" />
+    <None Include="Resources\debt.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\profile-user-icon-2048x2048-m41rxkoe.png" />
+    <EmbeddedResource Include="AnaForm.resx">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AyarlarForm.resx">
+      <DependentUpon>AyarlarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Melumatlar\HesabMelumatForm.resx">
+      <DependentUpon>HesabMelumatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsAnaForm\Kassa.resx">
+      <DependentUpon>Kassa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsAnaForm\MedaxilBorclar.resx">
+      <DependentUpon>MedaxilBorclar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsAnaForm\MexaricBorclar.resx">
+      <DependentUpon>MexaricBorclar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Melumatlar\ProgramMelumat.resx">
+      <DependentUpon>ProgramMelumat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GirisEkranlari\YeniHesabForm.resx">
+      <DependentUpon>YeniHesabForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\checkout-icon-2048x2048-8k7j8q1t.png" />
+    <None Include="Resources\Kassa.png" />
+    <EmbeddedResource Include="GirisEkranlari\GirisForm.resx">
+      <DependentUpon>GirisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Content Include="68bad1e2-f718-424f-9276-c0e6ec3fe2e4.ico" />
+    <Content Include="Logo.ico" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
